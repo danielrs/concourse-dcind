@@ -8,7 +8,7 @@ is using [Garden](https://github.com/cloudfoundry/garden) for running the images
 
 This image is based in the oficial [docker-image-resource](https://github.com/concourse/docker-image-resource)
 from Concourse, optimized for tasks steps (as opposed to resources). The alternatives (some of them linked
-below), follow a approach, however, they haven't been updated in quite some time.
+below) follow a similar approach, however, they haven't been updated in quite some time.
 
 #### Alternatives
 
