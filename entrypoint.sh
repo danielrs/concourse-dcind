@@ -15,6 +15,8 @@ set -e -o errexit -o pipefail -o nounset
 #   certs_to_file()
 #   set_client_certs()
 #   docker_pull()
+# added:
+#  if condition, lines 87-90
 
 LOG_FILE=${LOG_FILE:-/tmp/docker.log}
 SKIP_PRIVILEGED=${SKIP_PRIVILEGED:-false}
@@ -82,7 +84,9 @@ start_docker() {
   local server_args="--mtu ${mtu}"
   local registry=""
 
-  server_args="${server_args} --max-concurrent-downloads=$1 --max-concurrent-uploads=$2"
+  if [ -n "$1" ] && [ -n "$2" ]; then
+    server_args="${server_args} --max-concurrent-downloads=$1 --max-concurrent-uploads=$2"
+  fi
 
   for registry in $3; do
     server_args="${server_args} --insecure-registry ${registry}"
