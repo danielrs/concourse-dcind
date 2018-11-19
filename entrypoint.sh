@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e -o errexit -o pipefail -o nounset
+set -e -o errexit -o pipefail
 
 # docker-image-resource
 # ----------------
